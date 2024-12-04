@@ -1,21 +1,78 @@
+import { Input, } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card"
+
 import AppButton from "@/components/AppButton";
 
 function App() {
   return (
     <>
-      <div className="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg">
-        <div className="shrink-0">
-          <img className="size-12" src="/img/logo.svg" alt="ChitChat Logo" />
+    <main>
+      <section className="p-9">
+        <div className="container">
+          <div className='flex justify-center items-center mb-9'>
+            <Input className='w-96 rounded-e-none' placeholder='請輸入代辦事項'/>
+            <Select>
+              <SelectTrigger className="w-[180px] rounded-none">
+                <SelectValue placeholder="Priority" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="High">High</SelectItem>
+                <SelectItem value="middle">Middle</SelectItem>
+                <SelectItem value="low">Low</SelectItem>
+              </SelectContent>
+            </Select>
+            <AppButton/>
+          </div>
+          <div className='bg-cyan-100 p-5 mb-5 rounded-lg'>
+            <h2 className='mb-9 text-4xl text-zinc-900'>High</h2>
+            <ul className='flex'>
+              <li>
+                <Card className="overflow-hidden">
+                  <CardContent className='p-6'>
+                    早上起床刷牙
+                  </CardContent>
+                </Card>
+              </li>
+            </ul>
+          </div>
+          <div className='bg-teal-100 p-5 rounded-lg mb-5'>
+            <h2 className='mb-9 text-4xl text-zinc-900'>Middle</h2>
+            <ul className='flex'>
+              <li>
+                <Card className="overflow-hidden">
+                  <CardContent className='p-6'>
+                    早上起床刷牙
+                  </CardContent>
+                </Card>
+              </li>
+            </ul>
+          </div>
+          <div className='bg-emerald-100 p-5 rounded-lg mb-5'>
+            <h2 className='mb-9 text-4xl text-zinc-900'>Middle</h2>
+            <ul className='flex'>
+              <li>
+                <Card className="overflow-hidden">
+                  <CardContent className='p-6'>
+                    早上起床刷牙
+                  </CardContent>
+                </Card>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <div className="text-xl font-medium text-black">ChitChat</div>
-          <p className="text-slate-500">You have a new message!</p>
-        </div>
-      </div>
-      <AppButton />
-      <button className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
-        測試
-      </button>
+      </section>
+    </main>
     </>
   );
 }

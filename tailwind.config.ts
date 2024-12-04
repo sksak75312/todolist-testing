@@ -9,6 +9,10 @@ export default {
 	],
 	theme: {
 		extend: {
+			container: {
+				center: true,
+				padding: '0.75rem'
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
