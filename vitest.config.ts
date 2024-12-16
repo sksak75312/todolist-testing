@@ -14,7 +14,7 @@ import viteConfig from './vite.config'
 export default mergeConfig(viteConfig, defineConfig({
   test: {
     // globals 為 true 省去測試檔案使用 import
-    // globals: true,
+    globals: true,
     environment: 'jsdom'
   }
 }))

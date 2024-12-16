@@ -1,5 +1,9 @@
-import {Button as ButtonUi} from '@/components/ui/button';
+import { Button as ButtonUi } from "@/components/ui/button";
 
-export default function Button() {
-  return <ButtonUi type="button" className="rounded-s-none">Add Todo</ButtonUi>;
+export default function Button({ onButton }: { onButton: () => void }) {
+  return (
+    <ButtonUi type="button" className="rounded-s-none" onClick={onButton}>
+      Add Todo
+    </ButtonUi>
+  );
 }
