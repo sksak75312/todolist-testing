@@ -66,7 +66,7 @@ function App() {
                   <SelectValue placeholder="Priority" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="hight">High</SelectItem>
+                  <SelectItem value="high">High</SelectItem>
                   <SelectItem value="middle">Middle</SelectItem>
                   <SelectItem value="low">Low</SelectItem>
                 </SelectContent>
