@@ -16,8 +16,8 @@ function App() {
   const [todoList, setTodoList] = useState<
     { id: string; content: string; priority: string }[]
   >([]);
-  const hightList = todoList.filter((item) => item.priority === "hight");
-  const middleList = todoList.filter((item) => item.priority === "middle");
+  const hightList = todoList.filter((item) => item.priority === "high");
+  const middleList = todoList.filter((item) => item.priority === "medium");
   const lowList = todoList.filter((item) => item.priority === "low");
 
   const initialNewData = {
@@ -67,7 +67,7 @@ function App() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="high">High</SelectItem>
-                  <SelectItem value="middle">Middle</SelectItem>
+                  <SelectItem value="medium">Medium</SelectItem>
                   <SelectItem value="low">Low</SelectItem>
                 </SelectContent>
               </Select>
@@ -75,7 +75,7 @@ function App() {
             </div>
             {!!hightList.length && (
               <div className="mb-5 rounded-lg bg-cyan-100 p-5">
-                <h2 className="mb-9 text-4xl text-zinc-900">High</h2>
+                <h2 className="mb-9 text-4xl text-zinc-900">High Group</h2>
                 <ul className="flex flex-wrap justify-start gap-4">
                   {hightList.map((item) => (
                     <li key={item.id}>
@@ -91,7 +91,7 @@ function App() {
             )}
             {!!middleList.length && (
               <div className="mb-5 rounded-lg bg-teal-100 p-5">
-                <h2 className="mb-9 text-4xl text-zinc-900">Middle</h2>
+                <h2 className="mb-9 text-4xl text-zinc-900">Medium Group</h2>
                 <ul className="flex flex-wrap justify-start gap-4">
                   {middleList.map((item) => (
                     <li key={item.id}>
@@ -107,7 +107,7 @@ function App() {
             )}
             {!!lowList.length && (
               <div className="mb-5 rounded-lg bg-emerald-100 p-5">
-                <h2 className="mb-9 text-4xl text-zinc-900">Low</h2>
+                <h2 className="mb-9 text-4xl text-zinc-900">Low Group</h2>
                 <ul className="flex flex-wrap justify-start gap-4">
                   {lowList.map((item) => (
                     <li key={item.id}>
