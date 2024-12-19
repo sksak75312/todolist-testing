@@ -15,13 +15,23 @@ export default mergeConfig(viteConfig, defineConfig({
   test: {
     // globals 為 true 省去測試檔案使用 import
     globals: true,
+    /**
+     * @description environment
+     * * 指定測試環境，適合測試需要 DOM 的 React、Vue 等前端元件
+     * * 預設是 node 環境，無法測試 DOM 操作。
+     */
     environment: 'jsdom',
+    exclude: ["src/main.tsx", "**/node_modules/**"],
+    coverage: {
+      include: ["src/**/*.tsx"],
+      exclude: ["src/main.tsx"],
+    },
     onConsoleLog(log, type) {
       console.log("log in test: ", log);
       if (log === "message from third party library" && type === "stdout") {
-        return false; // 阻止特定訊息顯示
+        return false;
       }
-    }
+    },
   },
 
 }))

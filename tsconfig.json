@@ -8,6 +8,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["vitest/globals", "node"]
+    "types": ["vitest/globals", "node"],
+    "jsx": "react-jsx"
   }
 }
